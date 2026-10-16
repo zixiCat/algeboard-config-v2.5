@@ -2,4 +2,6 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    # The Algeboard fork uses Zephyr 3.2 and legacy board metadata.
+    # Newer workflows require board qualifiers that this version does not expose.
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2.1
